@@ -20,6 +20,7 @@ public class Activitate_noua extends AppCompatActivity {
 
     public Boolean edit=false;
     public Bormasina b;
+    private int pozitie = -1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,22 +31,44 @@ public class Activitate_noua extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        Intent intent=getIntent();
-        if(intent!=null && intent.hasExtra("EDIT_ITEM")){
-            edit=true;
-            Bundle bundle=intent.getBundleExtra("EDIT_ITEM");
-            b=bundle.getParcelable("EDIT");
-        }
         Integer[] valori={500,750,1000,1250,1500};
         Spinner spinner=(Spinner) findViewById(R.id.spinnerGrad);
         ArrayAdapter <Integer> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,valori);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-        EditText et=findViewById(R.id.edit_txt);
-        CheckBox cb=findViewById(R.id.cbox);
-        RadioButton rbNou=findViewById(R.id.radbtnNOUA);
-        RatingBar ratingBar=findViewById(R.id.ratingBar);
-        
+        EditText et = findViewById(R.id.edit_txt);
+        CheckBox cb = findViewById(R.id.cbox);
+        RadioButton rbNou = findViewById(R.id.radbtnNOUA);
+        RadioButton rbVechi = findViewById(R.id.radbtnVECHE);
+        RatingBar ratingBar = findViewById(R.id.ratingBar);
+        Intent intent = getIntent();
+        if (intent != null && intent.hasExtra("EDIT_ITEM")) {
+            edit = true;
+            Bundle bundle = intent.getBundleExtra("EDIT_ITEM");
+            if (bundle != null) {
+                b = bundle.getParcelable("EDIT");
+                pozitie = bundle.getInt("POSITION", -1);
+                if (b != null) {
+                    et.setText(b.getNume());
+                    cb.setChecked(b.getFolosita());
+                    if (Boolean.TRUE.equals(b.getNou())) {
+                        rbNou.setChecked(true);
+                    } else {
+                        rbVechi.setChecked(true);
+                    }
+                    for (int i = 0; i < valori.length; i++) {
+                        if (valori[i] == b.getGradUzare()) {
+                            spinner.setSelection(i);
+                            break;
+                        }
+                    }
+                    if (b.getRating() != null) {
+                        ratingBar.setRating(b.getRating());
+                    }
+                }
+            }
+        }
+
     }
 
     public void Adauga(View view) {
@@ -63,6 +86,9 @@ public class Activitate_noua extends AppCompatActivity {
         Intent rezultat=new Intent();
         Bundle rez=new Bundle();
         rez.putParcelable("BORMASINA",bm);
+        if (edit) {
+            rez.putInt("POSITION", pozitie);
+        }
         rezultat.putExtra("BUNDLE",rez);
         setResult(RESULT_OK,rezultat);
         finish();
