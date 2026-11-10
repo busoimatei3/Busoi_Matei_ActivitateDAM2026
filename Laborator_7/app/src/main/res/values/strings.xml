@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Laborator_4+5</string>
+    <string name="nume_bormasina">Nume bormasina:</string>
+    <string name="scrie_aici">Scrie aici</string>
+    <string name="introduceti_date">Introduceti date</string>
+    <string name="adauga">adauga</string>
+    <string name="functionala">functionala</string>
+    <string name="da">Da</string>
+    <string name="nu">Nu</string>
+    <string name="noua">Noua</string>
+    <string name="veche">Veche</string>
+    <string name="grad_uzare">Grad uzare:</string>
+    <string name="rating_calitate">Rating calitate</string>
+    <string name="nicio_borma_in_ad_ugat_nc">Nicio bormașină adăugată încă.</string>
+    <string name="toate_borma_inile_ad_ugate">Toate Bormașinile Adăugate</string>
+    <string name="vezi_lista_borma_ini_listview">Vezi Lista Bormașini (ListView)</string>
+    <string name="adaug_borma_in_ai_design">Adaugă Bormașină (AI Design)</string>
+</resources>

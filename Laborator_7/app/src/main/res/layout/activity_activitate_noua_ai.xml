@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F5F7FA"
+    tools:context=".Activitate_noua_ai">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Titlu Formular -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Adăugare Bormașină (AI Design)"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#1A2530"
+            android:gravity="center"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Nume Bormasina -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nume_bormasina"
+            android:textStyle="bold"
+            android:textColor="#4A5568"
+            android:layout_marginBottom="6dp" />
+
+        <EditText
+            android:id="@+id/edit_txt_ai"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/scrie_aici"
+            android:background="@android:drawable/editbox_background"
+            android:paddingHorizontal="12dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Stare de Functionare (CheckBox) -->
+        <CheckBox
+            android:id="@+id/cbox_ai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/functionala"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Stare Obiect (RadioGroup) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stare produs:"
+            android:textStyle="bold"
+            android:textColor="#4A5568"
+            android:layout_marginBottom="6dp" />
+
+        <RadioGroup
+            android:id="@+id/radGroup_ai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/radbtnNOUA_ai"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/noua" />
+
+            <RadioButton
+                android:id="@+id/radbtnVECHE_ai"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/veche" />
+        </RadioGroup>
+
+        <!-- Grad de uzare (Spinner) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/grad_uzare"
+            android:textStyle="bold"
+            android:textColor="#4A5568"
+            android:layout_marginBottom="6dp" />
+
+        <Spinner
+            android:id="@+id/spinnerGrad_ai"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Rating Calitate (RatingBar) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rating_calitate"
+            android:textStyle="bold"
+            android:textColor="#4A5568"
+            android:layout_marginBottom="6dp" />
+
+        <RatingBar
+            android:id="@+id/ratingBar_ai"
+            style="@style/Widget.AppCompat.RatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:numStars="5"
+            android:stepSize="0.5"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Buton Adaugare -->
+        <Button
+            android:id="@+id/btn_ai"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:text="@string/adauga"
+            android:onClick="Adauga"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</ScrollView>

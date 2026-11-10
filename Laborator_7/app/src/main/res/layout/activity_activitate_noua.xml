@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activitate_noua">
+
+    <TextView
+        android:id="@+id/txt_view"
+        android:layout_width="wrap_content"
+        android:layout_height="22dp"
+        android:orientation="horizontal"
+        android:text="@string/nume_bormasina"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edit_txt"
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:hint="@string/scrie_aici"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/cbox"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:text="@string/functionala"
+        >
+
+    </CheckBox>
+
+    <RadioGroup
+        android:id="@+id/radGroup"
+        android:layout_width="match_parent"
+        android:layout_height="116dp"
+
+        >
+
+        <RadioButton
+            android:id="@+id/radbtnNOUA"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:checked="true"
+            android:text="@string/noua"
+            >
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/radbtnVECHE"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:text="@string/veche"
+            >
+        </RadioButton>
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="234dp"
+        android:layout_height="33dp"
+        android:text="@string/grad_uzare"
+        >
+    </TextView>
+
+    <Spinner
+        android:id="@+id/spinnerGrad"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:padding="8dp">
+    </Spinner>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:text="@string/rating_calitate"
+        >
+    </TextView>
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        style="@style/Widget.AppCompat.RatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="57dp"
+        android:numStars="5"
+        >
+    </RatingBar>
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="151dp"
+        android:layout_height="84dp"
+        android:text="@string/adauga"
+        android:onClick="Adauga"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</LinearLayout>
